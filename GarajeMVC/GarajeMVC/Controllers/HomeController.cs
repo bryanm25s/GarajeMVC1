@@ -6,15 +6,15 @@ namespace GarajeMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private static Garage miGaraje = new Garage(1, "Tu Nombre Completo Aquí", 10, 0);
+        private static Garage miGaraje = new Garage(1, "Bryan Hernandez", 10, 0);
 
         public IActionResult Index()
         {
             if (miGaraje.GetAutos().Count == 0)
             {
-                miGaraje.IngresarAuto(new Auto(1, "Toyota", "HAG 3034"));
-                miGaraje.IngresarAuto(new Auto(2, "Ford", "HAZ 8990"));
-                miGaraje.IngresarAuto(new Auto(3, "Hyundai", "ZAW 2019"));
+                miGaraje.IngresarAuto(new Auto(1, "Maserati", "HAG 2511"));
+                miGaraje.IngresarAuto(new Auto(2, "Suzuki", "HAZ 4564"));
+                miGaraje.IngresarAuto(new Auto(3, "Aston Martin", "HAW 45455"));
             }
             return View(miGaraje);
         }
