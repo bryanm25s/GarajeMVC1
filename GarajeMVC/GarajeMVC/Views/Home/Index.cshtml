@@ -1,0 +1,35 @@
+﻿@model Garage
+
+@{
+    ViewData["Title"] = "Home Page";
+    // Obtenemos la lista de autos del Modelo.
+    List<Auto> autosList = Model.GetAutos();
+}
+
+<h3>Garaje: @Model.Descripcion</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Numero</th>
+            <th>Marca</th>
+            <th>Placa</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in autosList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numeroAuto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Placa)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
